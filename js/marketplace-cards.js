@@ -314,46 +314,14 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Exemplo de como usar (remova se já tiver implementado em app.js):
     // Dados de exemplo para teste
-    const exemploMarketplaces = [
-        {
-            id: 1,
-            name: "Xcondo Shop Tropical",
-            url: "https://tropical.xcondo.shop",
-            location: {
-                estado: "Goiás",
-                cidade: "Cândida de Morais",
-                bairro: "Centro",
-                coordinates: [-16.7731, -49.1402]
-            }
-        },
-        {
-            id: 2,
-            name: "Xcondo Shop Goianira",
-            url: "https://goianira.xcondo.shop",
-            location: {
-                estado: "Goiás",
-                cidade: "Goianira",
-                bairro: "Centro",
-                coordinates: [-16.5186, -49.4178]
-            }
-        },
-        {
-            id: 3,
-            name: "Xcondo Shop Trindade",
-            url: "https://trindade.xcondo.shop",
-            location: {
-                estado: "Goiás",
-                cidade: "Trindade",
-                bairro: "Centro",
-                coordinates: [-16.6469, -49.4872]
-            }
-        }
-    ];
+    if (typeof marketplacesData !== 'undefined') {
+        window.marketplaceRenderer.renderMarketplaces(marketplacesData);
+    }
     
     // Renderizar os cards de exemplo (remova se já tiver dados reais)
     setTimeout(() => {
         if (window.marketplaceRenderer) {
-            window.marketplaceRenderer.renderMarketplaces(exemploMarketplaces);
+            window.marketplaceRenderer.renderMarketplaces(marketplacesData);
         }
     }, 1000);
 });
